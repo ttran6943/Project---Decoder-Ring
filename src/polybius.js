@@ -89,6 +89,4 @@ function polybius(input, encode = true) {
   return returnArr.join("");
 }
 
-//polybius("2345 23513434112251", false); // expected: my message
-polybius("my message");
 module.exports = polybius;
