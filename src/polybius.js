@@ -58,7 +58,11 @@ function polybius(input, encode = true) {
       return false;
     }
     //cycles through the input array and searches for number pairs. if it finds a number pair, then it will push the number pair into the to-decode-array. if it finds a space, it will push the space into the to-decode-array
+    //if there is a space in between a number pair input, such as '4 2' then returns false
     for (let x = 0; x < inputArr.length; x++) {
+      if (Number.isInteger(parseInt(inputArr[x])) && inputArr[x+1] == ' ') {
+        return false;
+      }
       if (Number.isInteger(parseInt(inputArr[x]))) {
         toDecodeArr.push(`${inputArr[x]}${inputArr[x + 1]}`);
         x++;
