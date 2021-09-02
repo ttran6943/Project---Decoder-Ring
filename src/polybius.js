@@ -48,7 +48,13 @@ function polybius(input, encode = true) {
   }
   if (encode == false) {
     //removes spaces from the input and checks if the number of numbers is even: if not, returns false
-    if (!Number.isInteger(input.replace(" ", "").length / 2)) {
+    const resultArr = [];
+    let resultString = "";
+      for (let input in inputArr) {
+          resultArr.push(inputArr[input].replace(" ", ""));
+      }
+      resultString = resultArr.join("");
+    if (!Number.isInteger(resultString.length / 2)) {
       return false;
     }
     //cycles through the input array and searches for number pairs. if it finds a number pair, then it will push the number pair into the to-decode-array. if it finds a space, it will push the space into the to-decode-array
@@ -79,7 +85,7 @@ function polybius(input, encode = true) {
           toDecodeArr[selected] == "42" &&
           idxArr[parseInt(idx) + 1] !== "42"
         ) {
-          returnArr.push(`(i/j)`);
+          returnArr.push(`(i/j)`); 
           //skips if space since already added
         } else if (toDecodeArr[selected] == " ") {
         }
@@ -88,5 +94,3 @@ function polybius(input, encode = true) {
   }
   return returnArr.join("");
 }
-
-module.exports = polybius;
