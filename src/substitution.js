@@ -67,6 +67,5 @@ function substitution(input, alphabet, encode = true) {
     return returnArr.join("");
   }
 }
-substitution("You are an excellent spy", "!@#$%^&*()_+QWERTYUIOPASDF"); //deo !y% !w %s#%++%wi urd
-substitution("deo !y% !w %s#%++%wi urd", "!@#$%^&*()_+QWERTYUIOPASDF", false);
+
 module.exports = substitution;
